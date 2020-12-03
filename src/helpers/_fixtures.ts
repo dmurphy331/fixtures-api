@@ -1,6 +1,6 @@
-const moment = require("moment");
+import moment from "moment";
 
-const getFixtures = function (elements) {
+const getFixtures = (elements) => {
   let matchfixtures = [];
   let date = "";
   for (let index = 0; index < elements.length; index++) {
@@ -35,4 +35,4 @@ const getFixtures = function (elements) {
   return matchfixtures;
 };
 
-module.exports = { getFixtures };
+export { getFixtures };
