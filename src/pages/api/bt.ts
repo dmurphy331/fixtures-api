@@ -1,6 +1,6 @@
 import axios from "axios";
 import $ from "cheerio";
-import { getFixtures } from "../../helpers/_fixtures";
+import { getFixtures } from "../../utils/_fixtures";
 
 export default (req, res) => {
   const getData = async () => {
