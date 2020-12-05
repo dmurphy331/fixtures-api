@@ -14,7 +14,7 @@ export default (req, res) => {
       );
       res.status(200).json(matchFixtures);
     } catch (error) {
-      res.boom.badImplementation(error);
+      res.status(500).json(error);
     }
   };
 
