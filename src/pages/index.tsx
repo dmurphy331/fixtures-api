@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { GetServerSideProps } from "next";
 import { makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 export default function Home({ skyFixtures, btFixtures }) {
   const classes = useStyles();
   const theme = useTheme();
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
@@ -30,7 +30,7 @@ export default function Home({ skyFixtures, btFixtures }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={classes.root}>
-        <AppBar position="static" color="default">
+        <AppBar position="fixed" color="default">
           <Tabs
             value={value}
             onChange={handleChange}

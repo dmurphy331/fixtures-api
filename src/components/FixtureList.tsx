@@ -1,29 +1,34 @@
-interface FixtureListProps {
-  fixtures?: any;
-}
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
+import Divider from "@material-ui/core/Divider";
+import { Fixture } from "./../types/Fixture";
 
-interface Fixture {
-  date: string;
-  matchfixture: string;
-  competition: string;
-  kickoff: string;
-  channels: string;
+interface FixtureListProps {
+  fixtures?: Fixture[];
 }
 
 export default function FixtureList(props: FixtureListProps) {
   const { fixtures } = props;
 
   return (
-    <>
-      {fixtures.map((fixture: Fixture) => (
+    <Container maxWidth="md">
+      {fixtures.map((fixture) => (
         <div>
-          <p>{fixture.date}</p>
-          <p>{fixture.matchfixture}</p>
-          <p>{fixture.competition}</p>
-          <p>{fixture.kickoff}</p>
-          <p>{fixture.channels}</p>
+          <Typography variant="h6" component="h6">
+            {fixture.matchfixture}
+          </Typography>
+          <Typography variant="body1" component="p">
+            {fixture.date} - {fixture.kickoff}
+          </Typography>
+          <Typography variant="body1" component="p">
+            {fixture.competition}
+          </Typography>
+          <Typography variant="body1" component="p">
+            {fixture.channels}
+          </Typography>
+          <Divider />
         </div>
       ))}
-    </>
+    </Container>
   );
 }
